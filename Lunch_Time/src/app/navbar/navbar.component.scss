@@ -1,3 +1,25 @@
-h1 {
-    color: red;
+.top-navigation {
+    overflow: hidden;
+    background-color: #B81F40;
+    position: relative;
+    #nav-links {
+        display: none;
+    }
+    a .nav-desc {
+        color: #575757;
+        font-size: 1.2rem;
+        display: block;
+        padding: 1rem;
+    }
+    i {
+        color: white;
+    }
+    li .nav-icon {
+        color: white;
+        background-color: white;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 }

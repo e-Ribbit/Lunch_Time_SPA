@@ -1,1 +1,11 @@
-<h1>Navbar Component</h1>
+<nav class="top-navigation">
+  <div class="logo">Logo</div>
+  <li class="nav-icon" (click)="toggleMenu()">
+    <i class="material-icons"> {{ isMenuOpen ? "close" : "nav-links" }} </i>
+  </li>
+  <li id="nav-links" [class.is-open]="isMenuOpen">
+    <a class="nav-desc" href="#">Neue Sammelbestellung</a>
+    <a class="nav-desc" href="#">Meine Bestellübersicht</a>
+    <a class="nav-desc" href="#">Aktuelle Sammelbestellung</a>
+  </li>
+</nav>
