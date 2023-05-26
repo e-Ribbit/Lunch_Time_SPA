@@ -1,9 +1,12 @@
-<p>form-create-order works!</p>
-<form class="create-order">
-    <input type="text" id="title" name="title" placeholder="Titel Sammelbestellung">
-    <input type="text" id="restaurant" name="restaurant" placeholder="Restaurant">
-    <input type="text" id="paypal" name="paypal" placeholder="PayPal.me Link">
-    <input type="text" id="description" name="description" placeholder="Beschreibung">
-    <input type="submit" value="Speichern"></input>
-    <button id="cancel">Abbrechen</button>
-</form>
+<div class="form-container">
+        <form class="create-order" [formGroup]="createOrder" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <input type="text" id="name" formControlName="name" placeholder="Titel Sammelbestellung">
+                <input type="text" id="restaurant" formControlName="restaurant" placeholder="Restaurant">
+                <input type="text" id="paypal" formControlName="paypal" placeholder="PayPal.me Link">
+                <input type="text" id="description" name="formControlName" placeholder="Beschreibung">
+                <button type="submit" class="btn btn-success" value="Submit">Submit</button>
+                <button type="button" class="btn btn-cancel">Abbrechen</button>
+            </div>
+        </form>
+</div>

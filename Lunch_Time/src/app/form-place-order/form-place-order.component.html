@@ -1,12 +1,13 @@
-<p>form-place-order works!</p>
-<form class="create-order">
-    <input type="text" id="name" name="name" placeholder="Name Mitarbeiter">
-    <input type="checkbox" id="companion" name="companion" value="companion">
-    <label for="companion">Ich komme mit</label>
-    <input type="text" id="order" name="order" placeholder="Ich bestelle ...">
-    <input type="text" id="price" name="price" placeholder="Preis">
-    <input type="checkbox" id="paid" name="paid" value="paid">
-    <label for="paid">Bezahlt</label>
-    <input type="submit" value="Speichern"></input>
-    <button id="cancel">Abbrechen</button>
-</form>
+<div class="form-container">
+    <form class="place-order" [formGroup]="placeOrder" (ngSubmit)="onSubmit()">
+        <input type="text" id="name" formControlName="name" placeholder="Name Mitarbeiter">
+        <input type="checkbox" id="companion" name="companion" value="companion">
+        <label for="companion">Ich komme mit</label>
+        <input type="text" id="order" formControlName="order" placeholder="Ich bestelle ...">
+        <input type="text" id="price" formControlName="price" placeholder="Preis">
+        <input type="checkbox" id="paid" formControlName="paid" value="paid">
+        <label for="paid">Bezahlt</label>
+        <input type="submit" value="Speichern" />
+        <button type="button" id="cancel">Abbrechen</button>
+    </form>
+</div>
