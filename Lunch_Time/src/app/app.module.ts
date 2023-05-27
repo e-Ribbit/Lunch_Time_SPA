@@ -6,20 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MainListComponent } from './main-list/main-list.component';
-import { ListEntryComponent } from './list-entry/list-entry.component';
 import { FormPlaceOrderComponent } from './form-place-order/form-place-order.component';
 import { FormCreateOrderComponent } from './form-create-order/form-create-order.component';
-import { ListEntryDetailedComponent } from './list-entry-detailed/list-entry-detailed.component';
+import { FormDataComponent } from './form-data/form-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MainListComponent,
-    ListEntryComponent,
     FormPlaceOrderComponent,
     FormCreateOrderComponent,
-    ListEntryDetailedComponent
+    FormDataComponent
   ],
   imports: [
     BrowserModule,

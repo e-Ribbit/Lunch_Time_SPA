@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListEntryComponent } from './list-entry.component';
+import { FormDataComponent } from './form-data.component';
 
-describe('ListEntryComponent', () => {
-  let component: ListEntryComponent;
-  let fixture: ComponentFixture<ListEntryComponent>;
+describe('FormDataComponent', () => {
+  let component: FormDataComponent;
+  let fixture: ComponentFixture<FormDataComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ListEntryComponent]
+      declarations: [FormDataComponent]
     });
-    fixture = TestBed.createComponent(ListEntryComponent);
+    fixture = TestBed.createComponent(FormDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

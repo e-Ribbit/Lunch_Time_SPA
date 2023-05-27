@@ -8,6 +8,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class FormCreateOrderComponent implements OnInit {
   title = 'CreateOrderForm';
+  name!:string;
+  restaurant!:string;
+  paypal!:string;
+  description!:string;
+
   createOrder!: FormGroup;
 
   ngOnInit() {
