@@ -1,13 +1,27 @@
-<div class="form-container">
-    <form class="place-order" [formGroup]="placeOrder" (ngSubmit)="onSubmit()">
-        <input type="text" id="name" formControlName="name" placeholder="Name Mitarbeiter">
-        <input type="checkbox" id="companion" name="companion" value="companion">
-        <label for="companion">Ich komme mit</label>
-        <input type="text" id="order" formControlName="order" placeholder="Ich bestelle ...">
-        <input type="text" id="price" formControlName="price" placeholder="Preis">
-        <input type="checkbox" id="paid" formControlName="paid" value="paid">
-        <label for="paid">Bezahlt</label>
-        <input type="submit" value="Speichern" />
-        <button type="button" id="cancel">Abbrechen</button>
-    </form>
+<div class="container mt-5">
+    <div class="form-container">
+        <form class="place-order" [formGroup]="placeOrder" (ngSubmit)="onSubmit()">
+            <div formGroupName="requiredFields">
+                <input class="form-control" type="text" id="name" formControlName="name" placeholder="Name Mitarbeiter">
+                <div>
+                    <span
+                        *ngIf="!placeOrder.get('requiredFields.name')?.valid && placeOrder.get('requiredFields.name')?.touched">
+                        Bitte gib einen Namen ein</span>
+                </div>
+                <input class="form-control" type="text" id="order" formControlName="order" placeholder="Ich bestelle ...">
+                <div>
+                    <span
+                        *ngIf="!placeOrder.get('requiredFields.order')?.valid && placeOrder.get('requiredFields.order')?.touched">
+                        Bitte gib deine Bestellung ein</span>
+                </div>
+            </div>
+            <input type="checkbox" id="companion" name="companion" value="companion">
+            <label for="companion">Ich komme mit</label>
+            <input class="form-control" type="text" id="price" formControlName="price" placeholder="Preis">
+            <input type="checkbox" id="paid" formControlName="paid" value="paid">
+            <label for="paid">Bezahlt</label>
+            <button type="submit" class="btn btn-primary" value="Speichern">Speichern</button>
+            <button type="button" class="btn btn-cancel" id="cancel">Abbrechen</button>
+        </form>
+    </div>
 </div>

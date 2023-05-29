@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-create-order',
@@ -12,20 +12,28 @@ export class FormCreateOrderComponent implements OnInit {
   restaurant!:string;
   paypal!:string;
   description!:string;
-
   createOrder!: FormGroup;
 
   ngOnInit() {
     this.createOrder = new FormGroup({
-      name: new FormControl(null, Validators.required),
-      restaurant: new FormControl(null, Validators.required),
+      requiredFields: new FormGroup({
+        name: new FormControl(null, Validators.required),
+        restaurant: new FormControl(null, Validators.required),
+        description: new FormControl(null, Validators.required),
+      }),
       paypal: new FormControl(null),
-      description: new FormControl(null, Validators.required),
+
     });
   }
+
+  @ViewChild('createOrderForm') form!: NgForm;
   submitted = false;
   onSubmit() {
     this.submitted = true;
     console.log(this.createOrder);
+    this.name = this.form.value.requiredFields.name;
+    this.restaurant = this.form.value.requiredFields.restaurant;
+    this.description = this.form.value.requiredFields.description;
+    this.paypal = this.form.value.paypal;
   }
 }

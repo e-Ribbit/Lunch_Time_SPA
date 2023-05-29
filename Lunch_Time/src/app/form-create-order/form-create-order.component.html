@@ -1,12 +1,35 @@
-<div class="form-container">
+<div class="container mt-5">
+    <div class="form-container">
         <form class="create-order" [formGroup]="createOrder" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <input type="text" id="name" formControlName="name" placeholder="Titel Sammelbestellung">
-                <input type="text" id="restaurant" formControlName="restaurant" placeholder="Restaurant">
-                <input type="text" id="paypal" formControlName="paypal" placeholder="PayPal.me Link">
-                <input type="text" id="description" name="formControlName" placeholder="Beschreibung">
+                <div formGroupName="requiredFields">
+                    <input class="form-control" type="text" id="name" formControlName="name"
+                        placeholder="Titel Sammelbestellung">
+                    <div>
+                        <span
+                            *ngIf="!createOrder.get('requiredFields.name')?.valid && createOrder.get('requiredFields.name')?.touched">
+                            Bitte gib einen Titel für die Bestellung ein</span>
+                    </div>
+                    <input class="form-control" type="text" id="restaurant" formControlName="restaurant"
+                        placeholder="Restaurant">
+                    <div>
+                        <span
+                            *ngIf="!createOrder.get('requiredFields.restaurant')?.valid && createOrder.get('requiredFields.restaurant')?.touched">
+                            Bitte gib ein Restaurant ein</span>
+                    </div>
+                    <input class="form-control" type="text" id="description" formControlName="description"
+                        placeholder="Beschreibung">
+                    <div>
+                        <span
+                            *ngIf="!createOrder.get('requiredFields.description')?.valid && createOrder.get('requiredFields.description')?.touched">
+                            Bitte gib eine Beschreibung ein</span>
+                    </div>
+                </div>
+                <input class="form-control" type="text" id="paypal" formControlName="paypal"
+                    placeholder="PayPal.me Link">
                 <button type="submit" class="btn btn-success" value="Submit">Submit</button>
                 <button type="button" class="btn btn-cancel">Abbrechen</button>
             </div>
         </form>
+    </div>
 </div>

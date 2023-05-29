@@ -15,21 +15,31 @@ export class FormPlaceOrderComponent implements OnInit {
   paid!: boolean;
   placeOrder!: FormGroup;
 
-  @ViewChild('myForm') form!: NgForm;
-
+  ngOnInit() {
+    this.placeOrder = new FormGroup({
+      requiredFields: new FormGroup({
+        name: new FormControl(null, Validators.required),
+        order: new FormControl(null, Validators.required),
+      }),
+      companion: new FormControl(null),
+      price: new FormControl(null),
+      paid: new FormControl(null),
+    });
+  }
+  @ViewChild('placeOrderForm') form!: NgForm;
+  
   submitted = false;
   onSubmit() {
     this.submitted = true;
     console.log(this.placeOrder);
-    // this.name = this.form.value.
+    this.name = this.form.value.requiredFields.name;
+    this.order = this.form.value.requiredFields.order;
+    this.companion = this.form.value.companion;
+    this.price = this.form.value.price;
+    this.paid = this.form.value.paid;
   }
-  ngOnInit() {
-    this.placeOrder = new FormGroup({
-      name: new FormControl(null, Validators.required),
-      companion: new FormControl(null),
-      order: new FormControl(null, Validators.required),
-      price: new FormControl(null),
-      paid: new FormControl(null),
-    });
+
+  setDefaultValue(){
+     
   }
 }
