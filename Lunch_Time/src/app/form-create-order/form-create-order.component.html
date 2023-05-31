@@ -1,35 +1,64 @@
 <div class="container mt-5">
-    <div class="form-container">
-        <form class="create-order" [formGroup]="createOrder" (ngSubmit)="onSubmit(formCreateOrder)" #formCreateOrder = 'ngForm'>
-            <div class="form-group">
-                <div formGroupName="requiredFields">
-                    <input class="form-control" type="text" id="name" formControlName="name"
-                        placeholder="Titel Sammelbestellung">
+    <div class="form-area">
+        <form class="create-order" [formGroup]="createOrder" (ngSubmit)="onSubmit(formCreateOrder)"
+            #formCreateOrder='ngForm'>
+            <div formGroupName="requiredFields">
+                <div class="form-group mb-3">
+                    <div class="form-floating-mb3">
+                        <div class="form-floating">
+                            <input class="form-control" type="text" id="floatingInput" formControlName="name"
+                                placeholder="Titel Sammelbestellung">
+                            <label for="floatingInput">Gib den Titel der Sammelbestellung ein..</label>
+                        </div>
+                    </div>
                     <div>
                         <span
                             *ngIf="!createOrder.get('requiredFields.name')?.valid && createOrder.get('requiredFields.name')?.touched">
                             Bitte gib einen Titel für die Bestellung ein</span>
                     </div>
-                    <input class="form-control" type="text" id="restaurant" formControlName="restaurant"
-                        placeholder="Restaurant">
+                </div>
+
+                <div class="form-group mb-3">
+                    <div class="form-floating-mb3">
+                        <div class="form-floating">
+                            <input class="form-control" type="text" id="floatingInput" formControlName="restaurant"
+                                placeholder="Restaurant">
+                            <label for="floatingInput">Name des Restaurants</label>
+                        </div>
+                    </div>
                     <div>
                         <span
                             *ngIf="!createOrder.get('requiredFields.restaurant')?.valid && createOrder.get('requiredFields.restaurant')?.touched">
                             Bitte gib ein Restaurant ein</span>
                     </div>
-                    <input class="form-control" type="text" id="description" formControlName="description"
-                        placeholder="Beschreibung">
-                    <div>
-                        <span
-                            *ngIf="!createOrder.get('requiredFields.description')?.valid && createOrder.get('requiredFields.description')?.touched">
-                            Bitte gib eine Beschreibung ein</span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <div class="form-floating-mb3">
+                        <div class="form-floating">
+                            <input class="form-control" type="text" id="floatingInput" formControlName="description"
+                                placeholder="Beschreibung">
+                                <label for="floatingInput">Beschreibung</label>
+                        </div>
                     </div>
                 </div>
-                <input class="form-control" type="text" id="paypal" formControlName="paypal"
-                    placeholder="PayPal.me Link">
-                <button type="submit" class="btn btn-success" value="Submit">Submit</button>
-                <button type="button" class="btn btn-cancel">Abbrechen</button>
+                <div>
+                    <span
+                        *ngIf="!createOrder.get('requiredFields.description')?.valid && createOrder.get('requiredFields.description')?.touched">
+                        Bitte gib eine Beschreibung ein</span>
+                </div>
             </div>
+
+            <div class="form-floating-mb3">
+                <div class="form-group mb-3">
+                    <div class="form-floating">
+            <input class="form-control" type="text" id="floatingInput" formControlName="paypal" placeholder="PayPal.me Link">
+            <label for="floatingInput">PayPal.me Link</label>
+        </div>
+    </div>
+</div>
+            <button type="submit" class="btn btn-primary" value="Submit">Speichern</button>
+            <button type="button" class="btn btn-cancel">Abbrechen</button>
         </form>
     </div>
 </div>
