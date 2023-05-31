@@ -1,11 +1,14 @@
 <nav class="top-navigation">
   <div class="logo">Logo</div>
-  <li class="nav-icon" (click)="toggleMenu()">
-    <i class="material-icons"> {{ isMenuOpen ? "close" : "nav-links" }} </i>
-  </li>
-  <li id="nav-links" [class.is-open]="isMenuOpen">
-    <a class="nav-desc" href="#">Neue Sammelbestellung</a>
-    <a class="nav-desc" href="#">Meine Bestellübersicht</a>
-    <a class="nav-desc" href="#">Aktuelle Sammelbestellung</a>
-  </li>
+  <ul class="nav nav-underline justify-content-center">
+    <li id="nav-item">
+      <a class="nav-link" href="#">Neue Sammelbestellung</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Meine Bestellübersicht</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Aktuelle Sammelbestellung</a>
+    </li>
+  </ul>
 </nav>

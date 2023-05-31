@@ -28,7 +28,7 @@ export class FormCreateOrderComponent implements OnInit {
 
   @ViewChild('createOrderForm') form!: NgForm;
   submitted = false;
-  onSubmit() {
+  onSubmit(formCreateOrder: any) {
     this.submitted = true;
     console.log(this.createOrder);
     this.name = this.form.value.requiredFields.name;

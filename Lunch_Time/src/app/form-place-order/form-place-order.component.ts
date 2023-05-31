@@ -39,6 +39,10 @@ export class FormPlaceOrderComponent implements OnInit {
     this.paid = this.form.value.paid;
   }
 
+  getValue() {
+    console.log();
+  }
+
   setDefaultValue(){
      
   }
