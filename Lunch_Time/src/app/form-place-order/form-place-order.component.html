@@ -2,9 +2,14 @@
     <div class="form-area">
         <form class="place-order" [formGroup]="placeOrder" (ngSubmit)="onSubmit()">
             <div formGroupName="requiredFields">
-                <div class="form-group">
-                    <input class="form-control" type="text" id="name" formControlName="name"
-                        placeholder="Name Mitarbeiter" name="name">
+                <div class="form-group mb-3">
+                    <div class="form-floating-mb3">
+                        <div class="form-floating">
+                            <input class="form-control" type="text" id="floatingInput" formControlName="name"
+                                placeholder="Max Mustermann" name="name">
+                            <label for="floatingInput">Gib deinen Namen ein..</label>
+                        </div>
+                    </div>
                     <div>
                         <span
                             *ngIf="!placeOrder.get('requiredFields.name')?.valid && placeOrder.get('requiredFields.name')?.touched">
@@ -12,31 +17,47 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <input class="form-control" type="text" id="order" formControlName="order"
-                        placeholder="Ich bestelle ..." name="order">
-                    <div>
-                        <span
-                            *ngIf="!placeOrder.get('requiredFields.order')?.valid && placeOrder.get('requiredFields.order')?.touched">
-                            Bitte gib deine Bestellung ein</span>
+                <div class="form-group mb-3">
+                    <div class="form-floating-mb3">
+                        <div class="form-floating">
+                            <input class="form-control" type="text" id="floatingInput" formControlName="order"
+                                placeholder="Ich bestelle ..." name="order">
+                            <label for="floatingInput">Gib deine Bestellung ein..</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span
+                        *ngIf="!placeOrder.get('requiredFields.order')?.valid && placeOrder.get('requiredFields.order')?.touched">
+                        Bitte gib deine Bestellung ein</span>
+
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="companion"
+                        value="companion">
+                    <label class="form-check-label" for="flexCheckDefault">Ich komme mit</label>
+                </div>
+            </div>
+
+            <div class="form-floating-mb3">
+                <div class="form-group mb-3">
+                    <div class="form-floating">
+                        <input class="form-control" type="text" id="floatingInput" formControlName="price"
+                            placeholder="..€" name="price">
+                        <label for="floatingInput">Preis</label>
                     </div>
                 </div>
             </div>
 
-            <div class="form-group">
-                <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="companion"
-                    value="companion">
-                    <label class="form-check-label" for="flexCheckDefault">Ich komme mit</label>
-            </div>
-
-            <div class="form-group">
-                <input class="form-control" type="text" id="price" formControlName="price" placeholder="Preis" name="price">
-            </div>
-
-            <div class="form-group">
-                <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="paid" formControlName="paid"
-                    value="paid">
-                <label class="form-check-label" for="flexCheckDefault">Bezahlt</label>
+            <div class="form-group mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="paid"
+                        formControlName="paid" value="paid">
+                    <label class="form-check-label" for="flexCheckDefault">Bezahlt</label>
+                </div>
             </div>
 
             <button type="submit" class="btn btn-primary" value="Speichern">Speichern</button>
