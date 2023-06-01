@@ -26,7 +26,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="mb-3">
                     <span
                         *ngIf="!placeOrder.get('requiredFields.order')?.valid && placeOrder.get('requiredFields.order')?.touched">
                         Bitte gib deine Bestellung ein</span>
@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary" value="Speichern">Speichern</button>
+            <button type="submit" class="btn btn-primary" [disabled]="placeOrder.invalid" value="Speichern">Speichern</button>
             <button type="button" class="btn btn-cancel" id="cancel">Abbrechen</button>
         </form>
     </div>

@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div class="form-area">
-        <form class="create-order" [formGroup]="createOrder" (ngSubmit)="onSubmit(formCreateOrder)"
+        <form class="create-order" [formGroup]="createOrder" (ngSubmit)="onSubmit()"
             #formCreateOrder='ngForm'>
             <div formGroupName="requiredFields">
                 <div class="form-group mb-3">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" value="Submit">Speichern</button>
+            <button type="submit" class="btn btn-primary" [disabled]="createOrder.invalid" value="Submit">Speichern</button>
             <button type="button" class="btn btn-cancel">Abbrechen</button>
         </form>
     </div>

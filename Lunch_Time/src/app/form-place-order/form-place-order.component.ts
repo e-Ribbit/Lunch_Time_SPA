@@ -18,20 +18,27 @@ export class FormPlaceOrderComponent {
 
 
   constructor(fB: FormBuilder) {
-    fB.group({
-      
-    })
-
-
-    this.placeOrder = new FormGroup({
-      requiredFields: new FormGroup({
-        name: new FormControl(null, Validators.required),
-        order: new FormControl(null, Validators.required),
+    this.placeOrder = fB.group({
+      requiredFields: fB.group({
+        name: ["", Validators.required],
+        order: ["", Validators.required],
       }),
-      companion: new FormControl(null),
-      price: new FormControl(null),
-      paid: new FormControl(null),
-    });
+        companion: [null],
+        price: [""],
+        paid: [null]
+      })
+    
+
+
+    // this.placeOrder = new FormGroup({
+    //   requiredFields: new FormGroup({
+    //     name: new FormControl(null, Validators.required),
+    //     order: new FormControl(null, Validators.required),
+    //   }),
+    //   companion: new FormControl(null),
+    //   price: new FormControl(null),
+    //   paid: new FormControl(null),
+    // });
   }
   @ViewChild('placeOrderForm') form!: NgForm;
   

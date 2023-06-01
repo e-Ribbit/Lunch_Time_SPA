@@ -12,24 +12,29 @@ export class FormCreateOrderComponent {
   // restaurant!:string;
   // paypal!:string;
   // description!:string;
-  createOrder!: FormGroup;
+  createOrder!: any;
   paypalRegex: string = "/^(?:https):\/\/paypal\.me\/.+ /gm"
 
   constructor(fB: FormBuilder) {
-    fB.group({
-      
+    this. createOrder = fB.group({
+      requiredFields: fB.group({
+      name: ["", Validators.required],
+      restaurant: ["", Validators.required],
+      description: ["", Validators.required]
+    }),
+      paypal: ["", Validators.pattern(this.paypalRegex)]
     })
 
 
-    this.createOrder = new FormGroup({
-      requiredFields: new FormGroup({
-        name: new FormControl(null, Validators.required),
-        restaurant: new FormControl(null, Validators.required),
-        description: new FormControl(null, Validators.required),
-      }),
-      paypal: new FormControl(null, Validators.pattern(this.paypalRegex)),
+    // this.createOrder = new FormGroup({
+    //   requiredFields: new FormGroup({
+    //     name: new FormControl(null, Validators.required),
+    //     restaurant: new FormControl(null, Validators.required),
+    //     description: new FormControl(null, Validators.required),
+    //   }),
+    //   paypal: new FormControl(null, Validators.pattern(this.paypalRegex)),
 
-    });
+    // });
   }
 
   @ViewChild('createOrderForm') form!: NgForm;
