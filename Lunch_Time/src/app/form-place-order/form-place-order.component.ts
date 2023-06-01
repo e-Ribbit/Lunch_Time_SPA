@@ -1,21 +1,28 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm, FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-form-place-order',
   templateUrl: './form-place-order.component.html',
   styleUrls: ['./form-place-order.component.scss'],
 })
-export class FormPlaceOrderComponent implements OnInit {
-  title = 'PlaceOrderForm';
-  name!: string;
-  companion!: boolean;
-  order!: string;
-  price!: string;
-  paid!: boolean;
-  placeOrder!: FormGroup;
+export class FormPlaceOrderComponent {
+  // title = 'PlaceOrderForm';
+  // name!: string;
+  // companion!: boolean;
+  // order!: string;
+  // price!: string;
+  // paid!: boolean;
+  // placeOrder!: FormGroup;
+  placeOrder!: any;
 
-  ngOnInit() {
+
+  constructor(fB: FormBuilder) {
+    fB.group({
+      
+    })
+
+
     this.placeOrder = new FormGroup({
       requiredFields: new FormGroup({
         name: new FormControl(null, Validators.required),
@@ -30,17 +37,32 @@ export class FormPlaceOrderComponent implements OnInit {
   
   submitted = false;
   onSubmit() {
-    this.submitted = true;
+    // this.submitted = true;
     console.log(this.placeOrder);
-    this.name = this.form.value.requiredFields.name;
-    this.order = this.form.value.requiredFields.order;
-    this.companion = this.form.value.companion;
-    this.price = this.form.value.price;
-    this.paid = this.form.value.paid;
+    // this.name = this.form.value.requiredFields.name;
+    // this.order = this.form.value.requiredFields.order;
+    // this.companion = this.form.value.companion;
+    // this.price = this.form.value.price;
+    // this.paid = this.form.value.paid;
   }
 
-  getValue() {
-    console.log();
+  get name () {
+    return this.placeOrder.get('requiredFields.name');
+  }
+
+  get order () {
+    return this.placeOrder.get('requiredFields.order');
+  }
+  get companion () {
+    return this.placeOrder.get('companion');
+  }
+
+  get price () {
+    return this.placeOrder.get('price');
+  }
+
+  get paid () {
+    return this.placeOrder.get('paid');
   }
 
   setDefaultValue(){
