@@ -9,6 +9,8 @@ import { MainListComponent } from './main-list/main-list.component';
 import { FormPlaceOrderComponent } from './form-place-order/form-place-order.component';
 import { FormCreateOrderComponent } from './form-create-order/form-create-order.component';
 import { FormDataComponent } from './form-data/form-data.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormDataComponent } from './form-data/form-data.component';
     MainListComponent,
     FormPlaceOrderComponent,
     FormCreateOrderComponent,
-    FormDataComponent
+    FormDataComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
