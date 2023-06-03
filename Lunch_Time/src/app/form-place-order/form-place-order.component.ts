@@ -27,18 +27,6 @@ export class FormPlaceOrderComponent {
         price: [""],
         paid: [null]
       })
-    
-
-
-    // this.placeOrder = new FormGroup({
-    //   requiredFields: new FormGroup({
-    //     name: new FormControl(null, Validators.required),
-    //     order: new FormControl(null, Validators.required),
-    //   }),
-    //   companion: new FormControl(null),
-    //   price: new FormControl(null),
-    //   paid: new FormControl(null),
-    // });
   }
   @ViewChild('placeOrderForm') form!: NgForm;
   

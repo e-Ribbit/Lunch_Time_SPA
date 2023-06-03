@@ -24,17 +24,6 @@ export class FormCreateOrderComponent {
     }),
       paypal: ["", Validators.pattern(this.paypalRegex)]
     })
-
-
-    // this.createOrder = new FormGroup({
-    //   requiredFields: new FormGroup({
-    //     name: new FormControl(null, Validators.required),
-    //     restaurant: new FormControl(null, Validators.required),
-    //     description: new FormControl(null, Validators.required),
-    //   }),
-    //   paypal: new FormControl(null, Validators.pattern(this.paypalRegex)),
-
-    // });
   }
 
   @ViewChild('createOrderForm') form!: NgForm;
