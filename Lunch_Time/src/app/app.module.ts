@@ -11,6 +11,7 @@ import { FormCreateOrderComponent } from './form-create-order/form-create-order.
 import { FormDataComponent } from './form-data/form-data.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { EditFormDataComponent } from './edit-form-data/edit-form-data.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegistrationComponent } from './registration/registration.component';
     FormCreateOrderComponent,
     FormDataComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    EditFormDataComponent
   ],
   imports: [
     BrowserModule,
