@@ -1,9 +1,14 @@
-<p>main-list works!</p>
-<ul class="entries">
-    <!-- <li *ngFor="let entry of entries"> -->
-        <button type="button">
-            <span class="order-name">#</span>
-            <span class="employee-name">#</span>
-        </button>
-    <!-- </li> -->
+<h3>Alle Sammelbestellungen</h3>
+<ul class="list-group">
+    <li class="list-unstyled mb-3" *ngFor="let listItem of listItems">
+        <div>
+            <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{listItem.name}}</h5>
+              </div>
+              <p class="mb-1">{{listItem.restaurant}}</p>
+              <small>{{listItem.description}}</small>
+            </a>
+        </div>
+    </li>
 </ul>

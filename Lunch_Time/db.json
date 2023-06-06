@@ -1,9 +1,18 @@
 {
-  "posts": [
+  "form-data": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "Max",
+      "restaurant": "Bella Italia",
+      "description": "Heute 12 Uhr",
+      "paypal": "https://www.max.paypal.me"
+    },
+    {
+      "id": 2,
+      "name": "Paul",
+      "restaurant": "Dönerhaus Can",
+      "description": "Um 11:30 wird bestellt",
+      "paypal": "https://www.paul.paypal.me"
     }
   ],
   "comments": [

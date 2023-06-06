@@ -12,6 +12,7 @@ import { FormDataComponent } from './form-data/form-data.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { EditFormDataComponent } from './edit-form-data/edit-form-data.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { EditFormDataComponent } from './edit-form-data/edit-form-data.component
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
