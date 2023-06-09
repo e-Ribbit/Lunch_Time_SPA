@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm, FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormDataService } from '../services/form-data.service';
 
 @Component({
   selector: 'app-form-create-order',
@@ -8,6 +9,7 @@ import { NgForm, FormGroup, FormControl, Validators, FormBuilder } from '@angula
 })
 export class FormCreateOrderComponent {
   title = 'CreateOrderForm';
+  formDataValue!: [];
   // name!:string;
   // restaurant!:string;
   // paypal!:string;
@@ -15,7 +17,7 @@ export class FormCreateOrderComponent {
   createOrder!: any;
   paypalRegex: string = "/^(?:https):\/\/paypal\.me\/.+ /gm"
 
-  constructor(fB: FormBuilder) {
+  constructor(fB: FormBuilder, private formData: FormDataService) {
     this. createOrder = fB.group({
       requiredFields: fB.group({
       name: ["", Validators.required],
@@ -30,26 +32,26 @@ export class FormCreateOrderComponent {
   submitted = false;
   onSubmit() {
     this.submitted = true;
-    console.log(this.createOrder);
-    // this.name = this.form.value.requiredFields.name;
-    // this.restaurant = this.form.value.requiredFields.restaurant;
-    // this.description = this.form.value.requiredFields.description;
-    // this.paypal = this.form.value.paypal;
+    this.formDataValue = this.createOrder.value;
+    // console.log(this.createOrder.value);
+    this.formData.submitFormData(this.formDataValue).subscribe((result: any)=> {
+      console.log(result);
+    });
   }
 
-  get name () {
-    return this.createOrder.get('requiredFields.name');
-  }
+  // get name () {
+  //   return this.createOrder.get('requiredFields.name');
+  // }
 
-  get restaurant () {
-    return this.createOrder.get('requiredFields.restaurant');
-  }
-  get description () {
-    return this.createOrder.get('requiredFields.description');
-  }
+  // get restaurant () {
+  //   return this.createOrder.get('requiredFields.restaurant');
+  // }
+  // get description () {
+  //   return this.createOrder.get('requiredFields.description');
+  // }
 
-  get paypal () {
-    return this.createOrder.get('paypal');
-  }
+  // get paypal () {
+  //   return this.createOrder.get('paypal');
+  // }
 
 }

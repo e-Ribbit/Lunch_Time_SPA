@@ -11,4 +11,9 @@ export class FormDataService {
     getFormData(){
       return this.http.get('http://localhost:3000/form-data');
     }
+
+  submitFormData(formData: []) {
+    console.log(formData);
+    return this.http.post('http://localhost:3000/form-data', formData);
+  }
 }
