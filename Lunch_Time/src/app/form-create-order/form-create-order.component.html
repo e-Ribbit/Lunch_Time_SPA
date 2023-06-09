@@ -1,7 +1,10 @@
 <div class="container mt-5">
     <div class="form-area">
-        <form class="create-order" [formGroup]="createOrder" (ngSubmit)="onSubmit()"
-            #formCreateOrder='ngForm'>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <form class="create-order" [formGroup]="createOrder" (ngSubmit)="onSubmit()" #formCreateOrder='ngForm'>
             <div formGroupName="requiredFields">
                 <div class="form-group mb-3">
                     <div class="form-floating-mb3">
@@ -58,7 +61,8 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" [disabled]="createOrder.invalid" value="Submit">Speichern</button>
+            <button type="submit" class="btn btn-primary" [disabled]="createOrder.invalid"
+                value="Submit">Speichern</button>
             <button type="button" class="btn btn-cancel">Abbrechen</button>
         </form>
     </div>

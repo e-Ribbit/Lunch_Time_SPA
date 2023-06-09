@@ -13,6 +13,15 @@
       "restaurant": "Dönerhaus Can",
       "description": "Um 11:30 wird bestellt",
       "paypal": "https://www.paul.paypal.me"
+    },
+    {
+      "requiredFields": {
+        "name": "Little Italy",
+        "restaurant": "sup",
+        "description": "sup"
+      },
+      "paypal": "",
+      "id": 3
     }
   ],
   "comments": [

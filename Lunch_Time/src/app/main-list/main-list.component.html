@@ -1,14 +1,16 @@
 <h3 class=" display-6 mt-3">Alle Sammelbestellungen</h3>
-<ul class="list-group">
-    <li class="list-unstyled mb-3" *ngFor="let listItem of listItems">
+<ul class="list-group" *ngFor="let listItem of listItems">
+    <li class="list-unstyled mb-3">
         <div>
             <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">{{listItem.name}}</h5>
-              </div>
-              <p class="mb-1">{{listItem.restaurant}}</p>
-              <small>{{listItem.description}}</small>
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{listItem.name}}</h5>
+                    <h5 class="mb-1">{{listItem.requiredFields}}</h5>
+                </div>
+                <p class="mb-1">{{listItem.restaurant}}</p>
+                <small>{{listItem.description}}</small>
             </a>
         </div>
+        <!-- <h5 class="mb-1">{{listItem.paypal}}</h5> -->
     </li>
 </ul>
