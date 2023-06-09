@@ -26,7 +26,7 @@ export class FormPlaceOrderComponent {
   }
   @ViewChild('placeOrderForm') form!: NgForm;
   
-  submitted = false;
+  submitted: boolean = false;
   onSubmit() {
     this.submitted = true;
     // console.log(this.placeOrder);

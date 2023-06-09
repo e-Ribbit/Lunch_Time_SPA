@@ -25,7 +25,7 @@ export class FormCreateOrderComponent {
   }
 
   @ViewChild('createOrderForm') form!: NgForm;
-  submitted = false;
+  submitted: boolean = false;
   onSubmit() {
     this.submitted = true;
     this.formDataValue = this.createOrder.value;

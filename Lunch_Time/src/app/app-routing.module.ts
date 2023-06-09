@@ -10,12 +10,12 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
-  { path: 'main-list/place-order', component: FormPlaceOrderComponent },
+  { path: 'main-list/order-list/place-order', component: FormPlaceOrderComponent },
   { path: 'create-order', component: FormCreateOrderComponent },
   { path: 'form-data', component: FormDataComponent },
   { path: 'edit-form-data', component: EditFormDataComponent },
   { path: 'main-list', component: MainListComponent },
-  { path: 'order-list', component: OrderListComponent},
+  { path: 'main-list/order-list', component: OrderListComponent},
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
 ];

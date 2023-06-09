@@ -1,4 +1,7 @@
 <h3 class=" display-6 mt-3">Sammelbestellung</h3>
+<div class="d-grid gap-2 mb-3">
+    <button class="btn btn-primary" type="button" routerLink="place-order">Button</button>
+  </div>
 <ul class="list-group" *ngFor="let listItem of orderListItems">
     <li class="list-unstyled mb-3">
         <div>
@@ -8,9 +11,9 @@
                     <h5 class="mb-1">{{listItem.order}}</h5>
                 </div>
                 <p class="mb-1">{{listItem.price}}</p>
-                <span class="alert alert-success" role="alert" *ngIf="!listItem.companion == true">
+                <span class="badge rounded-pill text-bg-info" *ngIf="!listItem.companion == true">
                     Ich komme mit</span>
-                <span class="alert alert-success" role="alert" *ngIf="!listItem.paid == true">
+                <span class="badge rounded-pill text-bg-success" *ngIf="!listItem.paid == true">
                     Ich habe schon bezahlt</span>
             </a>
         </div>
