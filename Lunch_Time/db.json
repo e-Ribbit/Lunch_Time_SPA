@@ -29,6 +29,26 @@
       "id": 1,
       "body": "some comment",
       "postId": 1
+    },
+    {
+      "requiredFields": {
+        "name": "Spirit Guardian",
+        "order": "Ramen \"Noodles\""
+      },
+      "companion": null,
+      "price": "12 €",
+      "paid": true,
+      "id": 2
+    },
+    {
+      "requiredFields": {
+        "name": "Spirit Guardian",
+        "order": "Ramen \"Noodles\""
+      },
+      "companion": null,
+      "price": "12 €",
+      "paid": true,
+      "id": 3
     }
   ],
   "profile": {

@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { EditFormDataComponent } from './edit-form-data/edit-form-data.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OrderListComponent } from './order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormDataComponent,
     LoginComponent,
     RegistrationComponent,
-    EditFormDataComponent
+    EditFormDataComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,

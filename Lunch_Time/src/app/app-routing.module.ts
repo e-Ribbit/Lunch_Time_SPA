@@ -5,6 +5,7 @@ import { FormCreateOrderComponent } from './form-create-order/form-create-order.
 import { FormDataComponent } from './form-data/form-data.component';
 import { EditFormDataComponent } from './edit-form-data/edit-form-data.component';
 import { MainListComponent } from './main-list/main-list.component';
+import { OrderListComponent } from './order-list/order-list.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'form-data', component: FormDataComponent },
   { path: 'edit-form-data', component: EditFormDataComponent },
   { path: 'main-list', component: MainListComponent },
+  { path: 'order-list', component: OrderListComponent},
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
 ];
