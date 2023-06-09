@@ -9,7 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
-  { path: 'place-order', component: FormPlaceOrderComponent },
+  { path: 'main-list/place-order', component: FormPlaceOrderComponent },
   { path: 'create-order', component: FormCreateOrderComponent },
   { path: 'form-data', component: FormDataComponent },
   { path: 'edit-form-data', component: EditFormDataComponent },

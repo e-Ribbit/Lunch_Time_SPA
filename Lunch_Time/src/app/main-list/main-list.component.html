@@ -2,7 +2,7 @@
 <ul class="list-group" *ngFor="let listItem of listItems">
     <li class="list-unstyled mb-3">
         <div>
-            <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+            <a routerLink="place-order" class="list-group-item list-group-item-action" aria-current="true">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">{{listItem.name}}</h5>
                     <h5 class="mb-1">{{listItem.requiredFields}}</h5>

@@ -13,7 +13,7 @@ export class FormPlaceOrderComponent {
   placeOrder!: any;
 
 
-  constructor(fB: FormBuilder) {
+  constructor(fB: FormBuilder, private placeOrderData: PlaceOrderService ) {
     this.placeOrder = fB.group({
       requiredFields: fB.group({
         name: ["", Validators.required],
@@ -31,28 +31,28 @@ export class FormPlaceOrderComponent {
     this.submitted = true;
     // console.log(this.placeOrder);
     this.placeOrderValue = this.placeOrder.value;
-    this.placeOrder.submitPlaceOrder(this.placeOrderValue).subscribe((result: any)=> {
+    this.placeOrderData.submitPlaceOrder(this.placeOrderValue).subscribe((result: any)=> {
       console.log(result);
     })
   }
 
-  get name () {
-    return this.placeOrder.get('requiredFields.name');
-  }
+  // get name () {
+  //   return this.placeOrder.get('requiredFields.name');
+  // }
 
-  get order () {
-    return this.placeOrder.get('requiredFields.order');
-  }
-  get companion () {
-    return this.placeOrder.get('companion');
-  }
+  // get order () {
+  //   return this.placeOrder.get('requiredFields.order');
+  // }
+  // get companion () {
+  //   return this.placeOrder.get('companion');
+  // }
 
-  get price () {
-    return this.placeOrder.get('price');
-  }
+  // get price () {
+  //   return this.placeOrder.get('price');
+  // }
 
-  get paid () {
-    return this.placeOrder.get('paid');
-  }
+  // get paid () {
+  //   return this.placeOrder.get('paid');
+  // }
 
 }
