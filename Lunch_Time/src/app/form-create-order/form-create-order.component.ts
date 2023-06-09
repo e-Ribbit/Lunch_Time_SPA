@@ -10,10 +10,6 @@ import { FormDataService } from '../services/form-data.service';
 export class FormCreateOrderComponent {
   title = 'CreateOrderForm';
   formDataValue!: [];
-  // name!:string;
-  // restaurant!:string;
-  // paypal!:string;
-  // description!:string;
   createOrder!: any;
   paypalRegex: string = "/^(?:https):\/\/paypal\.me\/.+ /gm"
 

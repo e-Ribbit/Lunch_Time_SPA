@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm, FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { PlaceOrderService } from '../services/place-order.service';
 
 @Component({
   selector: 'app-form-place-order',
@@ -7,13 +8,8 @@ import { NgForm, FormGroup, FormControl, Validators, FormBuilder } from '@angula
   styleUrls: ['./form-place-order.component.scss'],
 })
 export class FormPlaceOrderComponent {
-  // title = 'PlaceOrderForm';
-  // name!: string;
-  // companion!: boolean;
-  // order!: string;
-  // price!: string;
-  // paid!: boolean;
-  // placeOrder!: FormGroup;
+  title = 'PlaceOrderForm';
+  placeOrderValue!: [];
   placeOrder!: any;
 
 
@@ -32,13 +28,12 @@ export class FormPlaceOrderComponent {
   
   submitted = false;
   onSubmit() {
-    // this.submitted = true;
-    console.log(this.placeOrder);
-    // this.name = this.form.value.requiredFields.name;
-    // this.order = this.form.value.requiredFields.order;
-    // this.companion = this.form.value.companion;
-    // this.price = this.form.value.price;
-    // this.paid = this.form.value.paid;
+    this.submitted = true;
+    // console.log(this.placeOrder);
+    this.placeOrderValue = this.placeOrder.value;
+    this.placeOrder.submitPlaceOrder(this.placeOrderValue).subscribe((result: any)=> {
+      console.log(result);
+    })
   }
 
   get name () {
@@ -60,7 +55,4 @@ export class FormPlaceOrderComponent {
     return this.placeOrder.get('paid');
   }
 
-  setDefaultValue(){
-     
-  }
 }
