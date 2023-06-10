@@ -11,7 +11,7 @@ export class FormCreateOrderComponent {
   title = 'CreateOrderForm';
   formDataValue!: [];
   createOrder!: any;
-  paypalRegex: string = "/^(?:https):\/\/paypal\.me\/.+ /gm"
+  // paypalRegex: string = "https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
 
   constructor(fB: FormBuilder, private formData: FormDataService) {
     this. createOrder = fB.group({
@@ -20,7 +20,7 @@ export class FormCreateOrderComponent {
       restaurant: ["", Validators.required],
       description: ["", Validators.required]
     }),
-      paypal: ["", Validators.pattern(this.paypalRegex)]
+      paypal: [""]
     })
   }
 

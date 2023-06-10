@@ -1,5 +1,9 @@
 <div class="container mt-5">
     <div class="form-area">
+        <div *ngIf="submitted" class="alert alert-success alert-dismissible fade show" role="alert">
+            Deine Bestellung wurde aufgenommen.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
         <form class="place-order" [formGroup]="placeOrder" (ngSubmit)="onSubmit()">
             <div formGroupName="requiredFields">
                 <div class="form-group mb-3">
@@ -60,7 +64,8 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary" [disabled]="placeOrder.invalid" value="Speichern" routerLink="order-list">Speichern</button>
+            <button type="submit" class="btn btn-primary" [disabled]="placeOrder.invalid" value="Speichern"
+                routerLink="order-list">Speichern</button>
             <button type="button" class="btn btn-cancel" id="cancel">Abbrechen</button>
         </form>
     </div>

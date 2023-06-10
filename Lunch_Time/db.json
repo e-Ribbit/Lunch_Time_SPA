@@ -22,6 +22,15 @@
       },
       "paypal": "",
       "id": 3
+    },
+    {
+      "requiredFields": {
+        "name": "Testbestellung",
+        "restaurant": "Testbestellung",
+        "description": "Testbestellung"
+      },
+      "paypal": "Testbestellung",
+      "id": 4
     }
   ],
   "place-order": [

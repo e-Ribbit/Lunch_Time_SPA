@@ -16,4 +16,7 @@ export class MainListComponent implements OnInit {
       this.listItems = allData;
     });
   }
+  deleteEntry( entry_id : any) {
+    console.log(entry_id);
+  }
 }

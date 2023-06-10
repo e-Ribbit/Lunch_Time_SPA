@@ -14,7 +14,13 @@ export class OrderListComponent implements OnInit {
     this.orderListItem.getPlaceOrder().subscribe((pOData) => {
       console.log(pOData);
       this.orderListItems = pOData;
-    })
+    });
   }
 
+  deleteEntry( entry_id : any) {
+    console.log(entry_id);
+    this.orderListItem.deleteOrder(entry_id).subscribe((result)=>{
+      console.log(result);
+    });
+  }
 }
