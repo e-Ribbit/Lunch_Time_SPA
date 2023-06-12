@@ -18,9 +18,9 @@ export class OrderListComponent implements OnInit {
   }
 
   deleteEntry( entry_id : any) {
-    console.log(entry_id);
     this.orderListItem.deleteOrder(entry_id).subscribe((result)=>{
       console.log(result);
+      this.ngOnInit();
     });
   }
 }

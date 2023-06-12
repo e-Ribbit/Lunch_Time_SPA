@@ -10,7 +10,9 @@
                 <p class="mb-1">{{listItem.restaurant}}</p>
                 <small>{{listItem.description}}</small>
             </a>
+            <div class="d-md-flex justify-content-md-end">
+                <button type="button" class="btn btn-outline-danger" (click)="deleteEntry(listItem.id)">Löschen</button>
+            </div>
         </div>
-        <button type="button" class="btn btn-danger">Löschen</button>
     </li>
 </ul>

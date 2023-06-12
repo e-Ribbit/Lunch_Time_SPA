@@ -1,38 +1,5 @@
 {
-  "form-data": [
-    {
-      "id": 1,
-      "name": "Max",
-      "restaurant": "Bella Italia",
-      "description": "Heute 12 Uhr",
-      "paypal": "https://www.max.paypal.me"
-    },
-    {
-      "id": 2,
-      "name": "Paul",
-      "restaurant": "Dönerhaus Can",
-      "description": "Um 11:30 wird bestellt",
-      "paypal": "https://www.paul.paypal.me"
-    },
-    {
-      "requiredFields": {
-        "name": "Little Italy",
-        "restaurant": "sup",
-        "description": "sup"
-      },
-      "paypal": "",
-      "id": 3
-    },
-    {
-      "requiredFields": {
-        "name": "Testbestellung",
-        "restaurant": "Testbestellung",
-        "description": "Testbestellung"
-      },
-      "paypal": "Testbestellung",
-      "id": 4
-    }
-  ],
+  "form-data": [],
   "place-order": [
     {
       "id": 1,

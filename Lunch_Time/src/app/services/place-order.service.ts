@@ -16,7 +16,6 @@ export class PlaceOrderService {
   }
 
   deleteOrder( id : any) {
-    console.log(id);
-    return this.http.delete('http://localhost:3000/${id}');
+    return this.http.delete(`http://localhost:3000/place-order/${id}`);
   }
 }

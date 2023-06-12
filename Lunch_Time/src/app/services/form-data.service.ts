@@ -16,4 +16,8 @@ export class FormDataService {
     console.log(formData);
     return this.http.post('http://localhost:3000/form-data', formData);
   }
+
+  deleteItem( id : any) {
+    return this.http.delete(`http://localhost:3000/form-data/${id}`);
+  }
 }

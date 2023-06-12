@@ -17,6 +17,8 @@
                     Ich habe schon bezahlt</span>
             </a>
         </div>
-        <button (click)="deleteEntry(listItem.id)" type="button" class="btn btn-danger">Löschen</button>
+        <div class="d-md-flex justify-content-md-end">
+            <button (click)="deleteEntry(listItem.id)" type="button" class="btn btn-outline-danger">Löschen</button>
+        </div>
     </li>
 </ul>
