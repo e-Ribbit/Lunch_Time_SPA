@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm, FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { NgForm, Validators, FormBuilder } from '@angular/forms';
 import { PlaceOrderService } from '../services/place-order.service';
 
 @Component({
@@ -29,30 +29,9 @@ export class FormPlaceOrderComponent {
   submitted: boolean = false;
   onSubmit() {
     this.submitted = true;
-    // console.log(this.placeOrder);
     this.placeOrderValue = this.placeOrder.value;
     this.placeOrderData.submitPlaceOrder(this.placeOrderValue).subscribe((result: any)=> {
       console.log(result);
     })
   }
-
-  // get name () {
-  //   return this.placeOrder.get('requiredFields.name');
-  // }
-
-  // get order () {
-  //   return this.placeOrder.get('requiredFields.order');
-  // }
-  // get companion () {
-  //   return this.placeOrder.get('companion');
-  // }
-
-  // get price () {
-  //   return this.placeOrder.get('price');
-  // }
-
-  // get paid () {
-  //   return this.placeOrder.get('paid');
-  // }
-
 }

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm, FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { NgForm, Validators, FormBuilder } from '@angular/forms';
 import { FormDataService } from '../services/form-data.service';
 
 @Component({
@@ -29,25 +29,8 @@ export class FormCreateOrderComponent {
   onSubmit() {
     this.submitted = true;
     this.formDataValue = this.createOrder.value;
-    // console.log(this.createOrder.value);
     this.formData.submitFormData(this.formDataValue).subscribe((result: any)=> {
       console.log(result);
     });
   }
-
-  // get name () {
-  //   return this.createOrder.get('requiredFields.name');
-  // }
-
-  // get restaurant () {
-  //   return this.createOrder.get('requiredFields.restaurant');
-  // }
-  // get description () {
-  //   return this.createOrder.get('requiredFields.description');
-  // }
-
-  // get paypal () {
-  //   return this.createOrder.get('paypal');
-  // }
-
 }
