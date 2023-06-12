@@ -4,8 +4,8 @@
 </div>
 <ul class="list-group" *ngFor="let listItem of orderListItems">
     <li class="list-unstyled mb-3">
-        <div>
-            <a routerLink="order-list" class="list-group-item list-group-item-action" aria-current="true">
+        <div class="list-group-item list-group-item-action">
+            <a routerLink="order-list" class="link-body-emphasis link-underline link-underline-opacity-0">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">{{listItem.name}}</h5>
                     <h5 class="mb-1">{{listItem.order}}</h5>
@@ -16,9 +16,9 @@
                 <span class="badge rounded-pill text-bg-success" *ngIf="listItem.paid === true">
                     Ich habe schon bezahlt</span>
             </a>
-        </div>
-        <div class="d-md-flex justify-content-md-end">
-            <button (click)="deleteEntry(listItem.id)" type="button" class="btn btn-outline-danger">Löschen</button>
+            <div class="d-md-flex justify-content-md-end">
+                <button (click)="deleteEntry(listItem.id)" type="button" class="btn btn-outline-danger">Löschen</button>
+            </div>
         </div>
     </li>
 </ul>

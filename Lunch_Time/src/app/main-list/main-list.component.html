@@ -1,8 +1,8 @@
 <h3 class=" display-6 mt-3">Alle Sammelbestellungen</h3>
 <ul class="list-group" *ngFor="let listItem of listItems">
     <li class="list-unstyled mb-3">
-        <div>
-            <a routerLink="order-list" class="list-group-item list-group-item-action" aria-current="true">
+        <div class="list-group-item list-group-item-action">
+            <a routerLink="order-list" class="link-body-emphasis link-underline link-underline-opacity-0">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">{{listItem.name}}</h5>
                     <h5 class="mb-1">{{listItem.requiredFields}}</h5>
