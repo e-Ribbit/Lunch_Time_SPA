@@ -11,11 +11,10 @@ export class PlaceOrderService {
   }
 
   submitPlaceOrder(placeOrder: []) {
-    console.log(placeOrder);
-    return this.http.post('http://localhost:3000/place-order', placeOrder);
+    return this.http.post<any>('http://localhost:3000/place-order', placeOrder);
   }
 
   deleteOrder( id : any) {
-    return this.http.delete(`http://localhost:3000/place-order/${id}`);
+    return this.http.delete<any>(`http://localhost:3000/place-order/${id}`);
   }
 }

@@ -12,12 +12,11 @@ export class FormDataService {
       return this.http.get('http://localhost:3000/form-data');
     }
 
-  submitFormData(formData: []) {
-    console.log(formData);
-    return this.http.post('http://localhost:3000/form-data', formData);
+  submitFormData(formData: any) {
+    return this.http.post<any>('http://localhost:3000/form-data', formData);
   }
 
   deleteItem( id : any) {
-    return this.http.delete(`http://localhost:3000/form-data/${id}`);
+    return this.http.delete<any>(`http://localhost:3000/form-data/${id}`);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm, Validators, FormBuilder } from '@angular/forms';
 import { PlaceOrderService } from '../services/place-order.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-place-order',
@@ -13,12 +14,10 @@ export class FormPlaceOrderComponent {
   placeOrder!: any;
 
 
-  constructor(fB: FormBuilder, private placeOrderData: PlaceOrderService ) {
+  constructor(fB: FormBuilder, private placeOrderData: PlaceOrderService, private router: Router) {
     this.placeOrder = fB.group({
-      requiredFields: fB.group({
         name: ["", Validators.required],
         order: ["", Validators.required],
-      }),
         companion: [null],
         price: [""],
         paid: [null]
@@ -32,6 +31,8 @@ export class FormPlaceOrderComponent {
     this.placeOrderValue = this.placeOrder.value;
     this.placeOrderData.submitPlaceOrder(this.placeOrderValue).subscribe((result: any)=> {
       console.log(result);
+      this.placeOrder.reset();
+      this.router.navigateByUrl('main-list/order-list');
     })
   }
 }

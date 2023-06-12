@@ -1,40 +1,53 @@
 {
   "form-data": [
     {
-      "requiredFields": {
-        "name": "Little Italy",
-        "restaurant": "Little Italy",
-        "description": "Little Italy"
-      },
+      "name": "Testbestellung",
+      "restaurant": "Little Italy",
+      "description": "Little Italy",
       "paypal": "Testbestellung",
       "id": 1
     }
   ],
   "place-order": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    },
-    {
-      "requiredFields": {
-        "name": "Spirit Guardian",
-        "order": "Ramen \"Noodles\""
-      },
+      "name": "Tom",
+      "order": "Ramen \"Noodles\"",
       "companion": null,
       "price": "12 €",
+      "paid": true,
+      "id": 1
+    },
+    {
+      "name": "Max",
+      "order": "Pizza Salami",
+      "companion": null,
+      "price": "11 €",
       "paid": true,
       "id": 2
     },
     {
-      "requiredFields": {
-        "name": "Spirit Guardian",
-        "order": "Ramen \"Noodles\""
-      },
+      "name": "Lisa",
+      "order": "Nudeln mit Käse Sahne Soße",
+      "companion": null,
+      "price": "10 €",
+      "paid": true,
+      "id": 3
+    },
+    {
+      "name": "Test",
+      "order": "Test",
       "companion": null,
       "price": "12 €",
       "paid": true,
-      "id": 3
+      "id": 4
+    },
+    {
+      "name": "Tim",
+      "order": "Salat",
+      "companion": true,
+      "price": "8 €",
+      "paid": true,
+      "id": 5
     }
   ],
   "profile": {

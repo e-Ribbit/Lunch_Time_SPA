@@ -15,11 +15,9 @@ export class FormCreateOrderComponent {
 
   constructor(fB: FormBuilder, private formData: FormDataService) {
     this. createOrder = fB.group({
-      requiredFields: fB.group({
       name: ["", Validators.required],
       restaurant: ["", Validators.required],
-      description: ["", Validators.required]
-    }),
+      description: ["", Validators.required],
       paypal: [""]
     })
   }
@@ -30,7 +28,8 @@ export class FormCreateOrderComponent {
     this.submitted = true;
     this.formDataValue = this.createOrder.value;
     this.formData.submitFormData(this.formDataValue).subscribe((result: any)=> {
-      console.log(result);
+      this.createOrder.reset();
+      // console.log(result);
     });
   }
 }
